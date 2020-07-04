@@ -1,0 +1,85 @@
+<div class="wrapper">
+<div class="container">
+    <div class="row">
+        <header class="header">
+            <div class="col-md-2">
+                <div class="logo">
+                   <h4>Covid19 Tracker
+                </h4>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="dropdown">
+                    <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown">
+                      States
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#" (click)="checkState('Del')"> Delhi</a>
+                      <a class="dropdown-item" href="#" (click)="checkState('Maha')">Maharashtra</a>
+                    
+                    </div>
+                  </div>
+            </div>
+        </header>
+    </div>
+</div>
+</div>
+<div class="delhi" *ngIf="Flag==true">
+   
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+            <h4>Delhi</h4>
+            <h4>Active Cases: 5344
+            </h4>
+            <h4>Confirmed Cases: 45188
+            </h4>
+           
+        </div>
+        
+        <div class="card">
+      
+            <div class="card-body">
+                <div class="chart-wrapper">
+                    <canvas baseChart class="chart"
+                    [datasets]="StaffData"
+                    [labels]="StaffLabels"
+                    [options]="StaffOptions"
+                    [colors]="StaffColours"
+                    [legend]="StaffLegend"
+                    [chartType]="barChartType"
+                    ></canvas>
+                </div>
+            </div>
+        </div>
+      </div> 
+</div>
+<div class="maharastra" *ngIf="Flag==false">
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+            <h4>Mahastra</h4>
+            <h4>Active Cases: 268797
+
+            </h4>
+            <h4>Confirmed Cases: 7719119
+            </h4>
+           
+        </div>
+        
+        <div class="card">
+      
+            <div class="card-body">
+                <div class="chart-wrapper">
+                    <canvas baseChart class="chart"
+                    [datasets]="StaffDatas"
+                    [labels]="StaffLabelss"
+                    [options]="StaffOptions"
+                    [colors]="StaffColours"
+                    [legend]="StaffLegend"
+                    [chartType]="barChartType"
+                    ></canvas>
+                </div>
+            </div>
+        </div>
+      </div>
+</div>
+
